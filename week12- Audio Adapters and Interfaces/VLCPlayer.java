@@ -1,17 +1,22 @@
-package week12;
+package week12.week12;
+//This is a Concrete Music Player
+public class VLCPlayer{
 
-public class VLCPlayer {
+	private Plugin adapter; 
+	private boolean playState = false;
 
-	String playState = "";
+	public void play(AudioFile audio) throws UnSupportedAudioFormatException{		
+
+			this.adapter = new PluginAdapter();
+			this.adapter.play(audio);
+			this.playState = true;
+	}  
 	
-	public void play(AudioFile audio)
-	{
-		PluginAdapter plugin = new PluginAdapter();
-		plugin.play(audio);
+	public boolean getPlayState(){
+		return playState;
 	}
 	
-	public String getPlayState()
-	{
-		return this.playState;
+	public void stop(){
+		this.playState =false;
 	}
 }

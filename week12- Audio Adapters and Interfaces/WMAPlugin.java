@@ -1,11 +1,9 @@
-package week12;
+package week12.week12;
 
-public class WMAPlugin  implements Plugin{
+public class WMAPlugin implements Plugin{
 
-	@Override
-	public void play(AudioFile audio) {
-		// TODO Auto-generated method stub
-		
+	   @Override
+	   public void play(AudioFile audio) {
+	      System.out.println("Playing wma file: "+ audio.getFileName());		
+	   }
 	}
-
-}
